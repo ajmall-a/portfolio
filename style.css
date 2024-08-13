@@ -1,0 +1,755 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html{
+    scroll-behavior: smooth;
+    margin: 0;
+}
+body {
+    background: black ;
+    color: antiquewhite;
+    font-family: Arial, sans-serif;
+}
+.container {
+    padding: 20px 5% ;
+}
+.container img{
+    width:200px
+}
+#header {
+    width: 100%;
+    height: 100vh;
+    background-image: url(./IMG_20240723_195649377-modified.jpg);
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+}
+nav {
+    background: black;
+    position: fixed;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+nav img.logo {
+    width: 125px;
+}
+nav ul li {
+    margin: 10px 20px;
+    list-style: none;
+    display: inline-block;
+}
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    position:relative;
+}
+nav ul li a::after{
+    content: '';
+    width: 0;
+    height: 3px;
+    background: red;
+    position: absolute;
+    left:0;
+    bottom: -6px; 
+    transition: 0.5s;
+}
+nav ul li a:hover::after{
+    width:100%
+}
+nav ul{
+    padding-left: 600px;
+}
+
+ .fa-xmark {
+    display: none;
+    position: absolute;
+    right: 30px;
+    top: -55px;
+    opacity: 100%;
+}
+#bar svg{
+    opacity: 0;
+    position: absolute;
+    right: 30px;
+    top: -20px;
+    width: 25px;
+}
+
+
+#sidemenu.open {
+    right: 0;
+}
+.headertext {
+    margin-top: 15%;
+    font-size: 30px;
+}
+.headertext p {
+    font-size: 30px;
+}
+.headertext h1 {
+    font-size: 60px;
+    margin-top: 20px;
+
+}
+
+/* About Section */
+#about {
+    padding-top: 50px;
+    margin-bottom: 30px;
+    height: 100vh;
+    margin-left: 20px;
+    margin-top: 50px;
+    margin-right: 20px;
+    color: rgb(250, 245, 212);
+}
+#about .row1 {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+#about .about1 {
+    flex-basis: 30%;
+}
+#about .about1 img {
+    width: 100%;
+    border-radius: 50px 0 0 50px;
+}
+#about .about2 {
+    flex-basis: 65%;
+    margin-left: 30px;
+}
+#about .about2 h1 {
+    font-size: 60px;
+    font-weight:600 ;
+    color: rgb(245, 248, 251);
+}
+#about .tabtitle {
+    display: flex;
+    margin: 40px 0 20px;
+}
+#about .tabtitle .tablink {
+    padding: 0.;
+    margin-right: 80px;
+    font-size: 18px;
+    font-weight: 500;
+    cursor: pointer;
+    position: relative; 
+}
+.tablink::after{
+    content:'';
+    width: 0;
+    height: 3px;
+    background: rgb(255, 31, 31);
+    position: absolute;
+    left: 0;
+    bottom: -8px;
+    transition: 0.5s;
+ }
+ .tablink.activelink::after{
+    width: 50%;
+ }
+#about .tabtitle .activelink {
+    color: #ffffff;
+}
+#about .tabcontent {
+    display: none;
+}
+#about .tabcontent.activetab {
+    display: block;
+}
+#about ul {
+    list-style: none;
+}
+#about ul li {
+    margin-bottom: 6px ;
+}
+#about ul li span{
+    font-size: 14px;
+    color: #ffffff;
+}
+
+
+/* Portfolio Section */
+.container3 {
+    padding-left: 30px;
+    padding-right: 30px;
+    height: 100vh;
+}
+
+#portfolio {
+    padding-top: 70px;
+    height: 100vh;
+    margin-top: 100px;
+}
+
+#portfolio .subtitle {
+    text-align: center;
+    margin-bottom: 50px;
+    font-size: 60px;
+}
+
+#portfolio .worklist {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 50px;
+    justify-items: center;
+    margin-top: 50px;
+}
+
+#portfolio .work {
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+}
+
+#portfolio .work img {
+    width: 100%;
+    border-radius: 10px;
+    display: block;
+    transition: transform 0.5s;
+}
+
+#portfolio .work:hover img {
+    transform: scale(1.1);
+}
+
+#portfolio .layer {
+    width: 100%;
+    height: 0;
+    background: linear-gradient(rgba(0,0,0,0.6),#ff004f);
+    border-radius: 10px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0 40px;
+    text-align: center;
+    font-size: 14px;
+    transition: height 0.5s;
+}
+
+#portfolio .layer h3 {
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+
+#portfolio .layer p {
+    font-size: 14px;
+}
+
+#portfolio .layer a {
+    margin-top: 50px;
+    text-decoration: none;
+    line-height: 60px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    text-align: center;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#portfolio .layer a i {
+    color: #ff004f;
+    font-size: 24px;
+}
+
+#portfolio .work:hover .layer {
+    height: 100%;
+}
+
+
+
+/* Contact Section */
+#contact {
+    height: 100vh;
+}
+#contact .row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+#contact .contactright {
+    flex-basis: 60%;
+}
+.contactright h1{
+    font-size: 60px;
+    text-align: center;
+    margin-bottom: 30px;
+    margin-top: 30px;
+}
+#contact form {
+    display: flex;
+    flex-direction: column;
+}
+#contact form input,
+#contact form textarea,
+#contact form button {
+    margin: 10px 0;
+    width: 100%;
+    padding: 10px;
+    background: rgba(42, 42, 42, 0.941);
+    color: #ffffff;
+    outline: none;
+    font-size: 18px;
+    border: 0;
+    border-radius: 6px;
+}
+#contact form button {
+    background: #f72d2d;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+#contact form button:hover {
+    background: #555;
+}
+
+
+
+footer {
+    background: #333;
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+}
+
+.footerlogo {
+    width: 100px;
+}
+
+.socialmedia {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin: 20px 0;
+}
+
+.socialmedia a svg {
+    color: white;
+    font-size: 24px;
+}
+.socialmedia a svg:hover {
+    transform: translateY(-5px);
+}
+
+@media only screen and (max-width: 768px) {
+    #header {
+        width: 100%;
+        height: 100vh;
+        background-image: url(./IMG_20240723_195649377-modified.jpg);
+        background-size: cover;
+        background-position: center;
+        color: #fff;
+    }
+    #bar svg{
+        opacity: 100;
+    }
+    nav .fa-xmark {
+        position: absolute;
+        top: 30px;
+        left: 25px;
+        display: block;
+        color: #fff;
+        font-size: 30px;
+        cursor: pointer;
+    }
+    nav ul .fa-bars{
+        position: absolute;
+        top: 30px;
+        cursor: pointer;
+    }
+    nav ul {
+        background: rgba(0,0,0,0.6);
+        position: fixed;
+        top: 0;
+        right: -200px;
+        width: 150px;
+        height: 100vh;
+        padding-top: 50px;
+        z-index: 2;
+        transition: right 0.5s ;
+    }
+    nav ul li {
+        display: block;
+        margin: 25px;
+    }
+    nav{
+        background-color: rgb(0, 0, 0);
+        width: 100%;
+        position: fixed;
+        left: 0px;
+        padding-left: 20px;
+        z-index: 9;
+    }
+    nav ul{
+        padding-left: 00px;
+    }
+    #bar svg{
+        position: fixed;
+    }
+    
+
+
+    .headertext {
+        margin-top: 15%;
+        max-width: 300px;    
+    }
+    .headertext p {
+        max-width: 600px;
+        font-size: 30px;
+    }
+    .headertext h1 {
+        font-size: 50px;
+    }
+
+
+
+    #about .row1 {
+        justify-content: center;
+    }
+    #about{
+        height: 100vh;
+        /* padding-bottom: 80px; */
+        padding-top: 80px;
+    }
+    #about .about2 h1 {
+        font-size: 40px;
+        margin-bottom: 20px;
+    }
+    #about .tabcontent {
+        text-align: center;
+    }
+    #about .about1 img {
+        scale: 2.5;
+        border-radius: 10px;
+        margin-bottom: 130px;
+        margin-top: 200px;
+    }
+    .about2{
+        margin-top: 90px;
+        font-size: 18px;
+    }
+    .about2 .subhead{
+        text-align: center;
+    }
+    .tabtitle{
+        padding-left: 100px;
+        padding-right: 100px;
+        margin-left: 80px;
+    }
+
+
+
+    .container3 {
+        height: 100vh;
+        padding-right: 30px;
+    }
+    #portfolio {
+        height: auto;
+        margin-top:1050px;
+        padding-top:50px;
+    }
+    #portfolio .subtitle {
+        font-size: 40px;
+    }
+
+    #portfolio .worklist {
+        margin-top: 30px;
+    }
+
+    #portfolio .layer h3 {
+        font-size: 16px;
+    }
+    #portfolio .layer p {
+        font-size: 12px;
+    }
+    #portfolio .layer a {
+        width: 40px;
+        height: 40px;
+        line-height: 40px;
+    }
+
+    #contact{
+        margin-top: 1300px;
+    }
+}
+@media (max-width: 640px) {
+    #header {
+        width: 100%;
+        height: 100vh;
+        background-image: url(./IMG_20240723_195649377-modified.jpg);
+        background-size: cover;
+        background-position: center;
+        color: #fff;
+    }
+    #bar svg{
+        opacity: 100;
+    }
+    nav .fa-xmark {
+        position: absolute;
+        top: 30px;
+        left: 25px;
+        display: block;
+        color: #fff;
+        font-size: 30px;
+        cursor: pointer;
+    }
+    nav ul .fa-bars{
+        position: absolute;
+        top: 30px;
+        cursor: pointer;
+    }
+    nav ul {
+        background: rgba(0,0,0,0.6);
+        position: fixed;
+        top: 0;
+        right: -200px;
+        width: 150px;
+        height: 100vh;
+        padding-top: 50px;
+        z-index: 2;
+        transition: right 0.5s ;
+    }
+    nav ul li {
+        display: block;
+        margin: 25px;
+    }
+    nav{
+        background-color: rgb(0, 0, 0);
+        width: 100%;
+        position: fixed;
+        left: 0px;
+        padding-left: 20px;
+        z-index: 9;
+    }
+    #bar svg{
+        position: fixed;
+    }
+
+
+
+    .headertext {
+        margin-top: 20%;
+        max-width: 400px;
+    }
+    .headertext p {
+        max-width: 200px;
+        font-size: 30px;
+    }
+    .headertext h1 {
+        font-size: 40px;
+    }
+
+
+    #about .row1 {
+        justify-content: center;
+    }
+    #about .about2 h1 {
+        font-size: 40px;
+        margin-bottom: 20px;
+    }
+    #about .tabcontent {
+        text-align: center;
+    }
+    #about .about1 img {
+        scale: 2.5;
+        border-radius: 10px;
+        margin-bottom: 100px;
+        margin-top: 180px;
+    }
+    .about2{
+        margin-top: 90px;
+        font-size: 16px;
+    }
+    .about2 .subhead{
+        text-align: center;
+    }
+    .tabtitle{
+        padding-left: 70px;
+        padding-right: 20px;
+        margin-left: 80px;
+    }
+
+
+    .container3 {
+        height: 100vh;
+        padding-right: 30px;
+    }
+    #portfolio {
+        height: auto;
+        margin-top:1050px;
+        padding-top:50px;
+    }
+    #portfolio .subtitle {
+        font-size: 40px;
+    }
+
+    #portfolio .worklist {
+        margin-top: 30px;
+    }
+
+    #portfolio .layer h3 {
+        font-size: 16px;
+    }
+    #portfolio .layer p {
+        font-size: 12px;
+    }
+    #portfolio .layer a {
+        width: 40px;
+        height: 40px;
+        line-height: 40px;
+    }
+
+
+    #contact{
+        margin-top: 800px;
+    }
+}
+@media (max-width: 480px) {
+    #header{
+        width: 100%;
+    }
+    #bar svg{
+        opacity: 100;
+    }
+    nav{
+        background-color: rgb(0, 0, 0);
+        width: 100%;
+        position: fixed;
+        left: 0px;
+        padding-left: 20px;
+        z-index: 9;
+    }
+    nav .fa-xmark {
+        position: absolute;
+        top: 30px;
+        left: 25px;
+        display: block;
+        color: #fff;
+        font-size: 30px;
+        cursor: pointer;
+    }
+    nav ul .fa-bars{
+        position: absolute;
+        top: 30px;
+        cursor: pointer;
+    }
+    nav ul {
+        background: rgba(0,0,0,0.6);
+        position: fixed;
+        top: 0;
+        right: -200px;
+        width: 150px;
+        height: 100vh;
+        padding-top: 50px;
+        z-index: 2;
+        transition: right 0.5s ;
+    }
+    #bar svg{
+        position: fixed;
+    }
+    nav ul li {
+        display: block;
+        margin: 25px;
+    }
+
+
+
+    .headertext {
+        margin-top: 30%;
+        max-width: 300px;    
+    }
+    .headertext p {
+        max-width: 200px;
+        font-size: 20px;
+    }
+    .headertext h1 {
+        font-size: 40px;
+    }
+
+
+    #about .row1 {
+        justify-content: center;
+    }
+    #about .about2 h1 {
+        font-size: 30px;
+        margin-bottom: 10px;
+    }
+    #about .tabcontent {
+        text-align: center;
+    }
+    #about .about1 img {
+        scale: 2.5;
+        border-radius: 10px;
+        margin-bottom: 50px;
+        margin-top: 110px;
+    }
+    .about2{
+        margin-top: 90px;
+        font-size: 14px;
+    }
+    .about2 .subhead{
+        text-align: center;
+    }
+    #about .tabtitle .tablink {
+        margin-right: 40px;
+    }
+    .tabtitle{
+        padding-left: 1px;
+        padding-right: 1px;
+        margin-left: 80px;
+    }
+
+
+    .container3 {
+        height: 100vh;
+        padding-right: 30px;
+    }
+    #portfolio {
+        height: auto;
+        margin-top:1050px;
+        padding-top:50px;
+    }
+    #portfolio .subtitle {
+        font-size: 40px;
+    }
+
+    #portfolio .worklist {
+        margin-top: 30px;
+    }
+
+    #portfolio .layer h3 {
+        font-size: 16px;
+    }
+    #portfolio .layer p {
+        font-size: 12px;
+    }
+    #portfolio .layer a {
+        width: 40px;
+        height: 40px;
+        line-height: 40px;
+    }
+
+    #contact{
+        height: 100%;
+    }
+    #contact h1{
+        font-size: 40px;
+    }
+}
+

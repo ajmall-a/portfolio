@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Date Input with Placeholder</title>
+    <style>
+        .date-container {
+            position: relative;
+            display: inline-block;
+        }
+
+        .date-placeholder {
+            position: absolute;
+            top: 8px;
+            left: 10px;
+            color: #aaa;
+            pointer-events: none;
+            transition: all 0.2s;
+        }
+
+        .date-input {
+            padding: 8px;
+            padding-left: 10px; /* Ensure padding matches the placeholder position */
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            background-color: #f9f9f9;
+        }
+
+        .date-input:focus + .date-placeholder,
+        .date-input:not(:placeholder-shown) + .date-placeholder {
+            opacity: 0;
+            visibility: hidden;
+        }
+    </style>
+</head>
+<body>
+    <div class="date-container">
+        <input type="date" class="date-input" id="date-input" placeholder=" " />
+        <label for="date-input" class="date-placeholder">Select a date</label>
+    </div>
+
+    <script>
+        document.getElementById('date-input').addEventListener('change', function() {
+            this.classList.toggle('has-value', this.value);
+        });
+    </script>
+</body>
+</html>
