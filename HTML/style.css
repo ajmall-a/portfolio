@@ -3,6 +3,7 @@
     padding: 0;
     box-sizing: border-box;
 }
+
 html{
     scroll-behavior: smooth;
     margin: 0;
@@ -21,7 +22,7 @@ body {
 #header {
     width: 100%;
     height: 100vh;
-    background-image: url(./IMG_20240723_195649377-modified.jpg);
+    background-image: url(./R\ \(1\).jpg);
     background-size: cover;
     background-position: center;
     color: #fff;
@@ -33,9 +34,12 @@ nav {
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
+    padding-bottom:-10px;
+    
+    
 }
 nav img.logo {
-    width: 125px;
+    width: 70px;
 }
 nav ul li {
     margin: 10px 20px;
@@ -89,7 +93,7 @@ nav ul{
     font-size: 30px;
 }
 .headertext p {
-    font-size: 30px;
+    font-size: 40px;
 }
 .headertext h1 {
     font-size: 60px;
@@ -117,6 +121,7 @@ nav ul{
 }
 #about .about1 img {
     width: 100%;
+    height: 100%;
     border-radius: 50px 0 0 50px;
 }
 #about .about2 {
@@ -619,6 +624,10 @@ footer {
     #contact{
         margin-top: 800px;
     }
+    #about .about1 img {
+        width: 100%;
+        border-radius: 50px 50 50 50px;
+
 }
 @media (max-width: 480px) {
     #header{
@@ -744,6 +753,10 @@ footer {
         height: 40px;
         line-height: 40px;
     }
+    #about .about1 img {
+        width: 100%;
+        height: 100%;
+        border-radius: 50px 50 50 50px;
 
     #contact{
         height: 100%;
